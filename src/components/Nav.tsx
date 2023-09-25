@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import { useProgress } from '@/providers/LoderProgressProvider';
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from './ui/menubar';
 
-
 function Nav() {
     const router = useRouter()
     const ref = useRef<HTMLInputElement>(null)
@@ -19,6 +18,11 @@ function Nav() {
             router.push(`/search?q=${ref.current.value}`)
         }
     }
+    function gotToPopular() {
+        startPorgress()
+        router.push('/popular')
+    }
+
     return (
         <div className='w-screen sm:container flex pt-2 items-center'>
             <div className='flex items-center space-x-1'>
@@ -34,7 +38,7 @@ function Nav() {
                 </button>
             </div>
             <div className='sm:flex font-bold hidden'>
-                <Button disabled={loading} variant="custom1">Populer</Button>
+                <Button onClick={() => gotToPopular()} disabled={loading} variant="custom1">Populer</Button>
                 <Button disabled={loading} variant="custom1">Genres</Button>
                 <Button disabled={loading} variant="custom1">Movies</Button>
                 <Button disabled={loading} variant="custom1">Top Airing</Button>
@@ -68,7 +72,7 @@ function Nav() {
                                         }
                                     }
                                 }}
-                                    afterSignOutUrl='/' /> 
+                                    afterSignOutUrl='/' />
                             </MenubarItem>
                             <MenubarItem>
                                 Populer

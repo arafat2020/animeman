@@ -48,7 +48,7 @@ function LoderProgressProvider({ children }: { children: React.ReactNode }) {
       }}>
         <LoadingBar
           color='blue'
-          height={3}
+          height={4}
           progress={progress}
           onLoaderFinished={() =>finish()}
         />
