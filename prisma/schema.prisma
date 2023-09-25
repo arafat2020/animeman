@@ -1,0 +1,98 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String     @id @map("_id")
+  name       String?
+  profilePic String
+  joinedAt   DateTime   @default(now())
+  userId     String     @unique
+  BookMark   BookMark[]
+  PlayList   PlayList[]
+  React      React[]
+  History    History[]
+  Comment    Comment[]
+}
+
+model AnimeInstance {
+  id           String     @id @map("_id")
+  image        String
+  title        String
+  sunOrDun     String?
+  animeId      String     @unique
+  relese       String?
+  totalEpisode Int?
+  description  String?
+  genres       String[]   @default([])
+  ongoing      Boolean    @default(false)
+  anotherName  String?
+  BookMark     BookMark[]
+  PlayList     PlayList?  @relation(fields: [playListId], references: [id])
+  playListId   String[]   @default([])
+  React        React[]
+  History      History[]
+  Comment      Comment[]
+}
+
+model BookMark {
+  id              String        @id @map("_id")
+  createAt        DateTime      @default(now())
+  anime           AnimeInstance @relation(fields: [animeInstanceId], references: [animeId])
+  animeInstanceId String
+  user            User          @relation(fields: [userId], references: [id])
+  userId          String
+}
+
+model PlayList {
+  id     String          @id @map("_id")
+  nmae   String
+  user   User            @relation(fields: [userId], references: [userId])
+  userId String
+  anime  AnimeInstance[]
+  episodeId String
+  episodeNum Int
+}
+
+enum ReactType {
+  LIKE
+  LOVE
+  DISLIKE
+}
+
+model React {
+  id              String         @id @map("_id")
+  react           ReactType
+  anime           AnimeInstance? @relation(fields: [animeInstanceId], references: [animeId])
+  animeInstanceId String
+  user            User?          @relation(fields: [userId], references: [userId])
+  userId          String
+}
+
+model History {
+  id              String         @id @map("_id")
+  date            DateTime       @default(now())
+  anime           AnimeInstance? @relation(fields: [animeInstanceId], references: [animeId])
+  animeInstanceId String
+  user            User?          @relation(fields: [userId], references: [userId])
+  userId          String
+  episodeId       String
+}
+
+model Comment {
+  id              String         @id @map("_id")
+  cmmment         String
+  date            DateTime       @default(now())
+  anime           AnimeInstance? @relation(fields: [animeInstanceId], references: [animeId])
+  animeInstanceId String
+  user            User?          @relation(fields: [userId], references: [userId])
+  userId          String
+}
