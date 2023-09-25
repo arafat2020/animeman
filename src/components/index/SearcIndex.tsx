@@ -38,7 +38,7 @@ function SearcIndex({ q, searchres, topairres }: SearchIndexProps) {
                 <div className='w-full mt-6 flex flex-col justify-around items-center space-y-3'>
                     {
                         topairDta.results.map(e => {
-                            return <Card4 obj={e} />
+                            return <Card4 key={e.id} obj={e} />
                         })
                     }
                 </div>

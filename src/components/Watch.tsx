@@ -45,7 +45,7 @@ function Watch({ url, refer, poster, title }: { refer: string, url: IVideo[], po
                             </SelectLabel>
                             {
                                 url.map((e,i)=>{
-                                    return <SelectItem value={`${i}`}>{e.quality}</SelectItem>
+                                    return <SelectItem key={e.quality} value={`${i}`}>{e.quality}</SelectItem>
                                 })
                             }
                         </SelectGroup>

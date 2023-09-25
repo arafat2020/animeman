@@ -19,7 +19,7 @@ function AnimateCanvas() {
     camera.position.z = 2
     return <Fragment />
   }
-  const AllControll = memo(() => {
+  const AllControll = memo(function AllControll() {
     const { camera, gl } = useThree()
     const control = new OrbitControls(camera, gl.domElement)
     control.enableDamping = true
@@ -79,5 +79,4 @@ function AnimateCanvas() {
         </div>
     )
 }
-
 export default AnimateCanvas

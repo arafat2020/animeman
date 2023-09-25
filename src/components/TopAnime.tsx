@@ -5,7 +5,7 @@ import Card from './card/Card'
 import { Fragment, memo } from 'react'
 import Loader from './Loder/Loader'
 
-const TopAnime = memo(({ home = false }: { home?: Boolean }) => {
+const TopAnime = memo(function TopAnime({ home = false }: { home?: Boolean })  {
     const { res, isLoading } = useFetch({
         url: '/api/topanime',
         type: 'GET'

@@ -68,9 +68,9 @@ function AnimeIndex({ animeDat, topairres,animeId }: AnimeIndexProps) {
                                 </p>
                                 <div className='w-full flex flex-wrap'>
                                     {
-                                        searchData.genres?.map(e => {
-                                            return <Fragment key={e}>
-                                                <Button variant="outline" className='bg-transparent text-zinc-50 border-blue-600 font-sans font-medium bg-blue-400 h-[27px] m-2'>
+                                        searchData.genres?.map((e,i) => {
+                                            return <Fragment key={i}>
+                                                <Button  variant="outline" className='bg-transparent text-zinc-50 border-blue-600 font-sans font-medium bg-blue-400 h-[27px] m-2'>
                                                     {e}
                                                 </Button>
                                             </Fragment>
@@ -130,7 +130,7 @@ function AnimeIndex({ animeDat, topairres,animeId }: AnimeIndexProps) {
                 <div className='w-full mt-6 flex flex-col justify-around items-center space-y-3'>
                     {
                         topairDta.results.map(e => {
-                            return <Card4 obj={e} />
+                            return <Card4 key={e.id} obj={e} />
                         })
                     }
                 </div>

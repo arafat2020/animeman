@@ -75,7 +75,7 @@ function Slider() {
                     {
                         DataSlider.map((e, i) => {
                             return (
-                                <div className={cn('absolute right-2 bottom-2 text-zinc-800 hidden', i === index && 'inline')}>
+                                <div key={e.id} className={cn('absolute right-2 bottom-2 text-zinc-800 hidden', i === index && 'inline')}>
                                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight italic">
                                         {e.text}
                                     </h4>
