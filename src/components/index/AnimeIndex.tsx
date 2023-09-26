@@ -31,7 +31,7 @@ function AnimeIndex({ animeDat, topairres,animeId }: AnimeIndexProps) {
                     }} className='w-full h-[240px] sm:h-[300px] bg-center rounded-md'>
                     </div>
                     <div className='w-full flex flex-col sm:flex-row items-center'>
-                        <div className='ml-5  mt-[-40px]'>
+                        <div className='sm:ml-5  mt-[-40px]'>
                             <img src={searchData.image} alt="Anime Image" className='w-[180] h-[230px] rounded-md border-[5px] border-black' />
                         </div>
                         <div className='flex-1 mt-4 flex justify-around mx-2 sm:mx-0'>

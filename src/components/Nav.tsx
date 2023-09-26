@@ -22,6 +22,10 @@ function Nav() {
         startPorgress()
         router.push('/popular')
     }
+    function gotToMovie() {
+        startPorgress()
+        router.push('/movie')
+    }
 
     return (
         <div className='w-screen sm:container flex pt-2 items-center'>
@@ -40,7 +44,7 @@ function Nav() {
             <div className='sm:flex font-bold hidden'>
                 <Button onClick={() => gotToPopular()} disabled={loading} variant="custom1">Populer</Button>
                 <Button disabled={loading} variant="custom1">Genres</Button>
-                <Button disabled={loading} variant="custom1">Movies</Button>
+                <Button  onClick={() => gotToMovie()} disabled={loading} variant="custom1">Movies</Button>
                 <Button disabled={loading} variant="custom1">Top Airing</Button>
             </div>
             <div className='hidden sm:inline'>
@@ -74,7 +78,7 @@ function Nav() {
                                 }}
                                     afterSignOutUrl='/' />
                             </MenubarItem>
-                            <MenubarItem onClick={()=>gotToPopular()}>
+                            <MenubarItem onClick={() => gotToPopular()}>
                                 Populer
                             </MenubarItem>
                             <MenubarItem>

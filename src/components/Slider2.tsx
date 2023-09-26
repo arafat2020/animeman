@@ -47,7 +47,7 @@ function Slider2({ obj }: { obj: unknown }) {
                     backgroundImage: `url(${data[index].animeImg})`
                 }}
 
-                className="w-full h-full  bg-center relative">
+                className="w-full h-full  bg-center relative bg-cover">
                 <div
                 style={{
                     background:'linear-gradient(to top, rgba(0, 0, 0, .9) , transparent )'
