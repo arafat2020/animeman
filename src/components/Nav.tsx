@@ -74,7 +74,7 @@ function Nav() {
                                 }}
                                     afterSignOutUrl='/' />
                             </MenubarItem>
-                            <MenubarItem>
+                            <MenubarItem onClick={()=>gotToPopular()}>
                                 Populer
                             </MenubarItem>
                             <MenubarItem>

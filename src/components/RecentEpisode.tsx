@@ -4,6 +4,7 @@ import { RecentAnimeType, SubOrDub } from "@/type/type"
 import { useState } from "react"
 import { Switch } from "./ui/switch"
 import Card2 from "./card/Card2"
+import { MoveLeftIcon, MoveRightIcon } from "lucide-react"
 
 function RecentEpisode({ obj }: { obj: unknown }) {
     const data = obj as RecentAnimeType[]
@@ -29,6 +30,15 @@ function RecentEpisode({ obj }: { obj: unknown }) {
                         return <Card2 sub={e.subOrDub === SubOrDub.Sub} key={e.animeId} obj={e} />
                     })
                 }
+            </div>
+            <div className="w-[45%] sm:w-[25%] flex justify-around m-auto my-5 text-lg items-center bg-slate-700 font-bold rounded-md p-2">
+                <button>
+                    <MoveLeftIcon className="p-1 bg-blue-600 rounded-md" />
+                </button>
+                <p className="bg-blue-600 px-2 rounded-md">1</p>
+                <button>
+                    <MoveRightIcon className="p-1 bg-blue-600 rounded-md" />
+                </button>
             </div>
         </div>
     )
