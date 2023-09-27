@@ -41,7 +41,7 @@ function Slider2({ obj }: { obj: unknown }) {
         }
     }, [index])
     return (
-        <div className="slider2 w-screen sm:w-full h-[270px] sm:h-[350px]  mt-5 ">
+        <div className="slider2 w-screen sm:w-full h-[300px] sm:h-[350px]  mt-5 ">
             <div
                 style={{
                     backgroundImage: `url(${data[index].animeImg})`
@@ -49,18 +49,30 @@ function Slider2({ obj }: { obj: unknown }) {
 
                 className="w-full h-full  bg-center relative bg-cover">
                 <div
-                style={{
-                    background:'linear-gradient(to top, rgba(0, 0, 0, .9) , transparent )'
-                }}
-                 className="w-full h-full">
-                    <div className="w-full h-1/5  glassBg absolute bottom-0 left-0 p-4 flex items-center">
-                        <h2 className="flex-1 text-zinc-100 font-bold italic underline text-xl sm:text-2xl">
-                            {truncateString(data[index].animeTitle, 15)}
-                        </h2>
-                        <Button variant="outline" className="glassBg2 text-xl font-bold font-sans text-zinc-100">
-                            Watch
-                        </Button>
+                    style={{
+                        background: 'linear-gradient(to left, rgba(0, 0, 0, .9) , transparent )'
+                    }}
+                    className="w-full h-full glassBg4 flex flex-col sm:flex-row justify-around items-center">
+                    <div style={{
+                        background: 'linear-gradient(to right, rgba(0, 0, 0, .3) , transparent )'
+                    }} className="w-[200px] h-[90%] rounded-md p-3 mt-2 sm:mt-0">
+                        <div style={{
+                            backgroundImage: `url(${data[index].animeImg})`
+                        }} className="w-full h-full rounded-md bg-center bg-cover bg-no-repeat">
+
+                        </div>
+
                     </div>
+                    <div className="w-full sm:w-[60%] text-center">
+                        <h2 style={{
+                            background: 'linear-gradient(to right, rgba(0, 0, 0, .3) , transparent )'
+                        }} className="m-2 sm:m-0 font-sans text-2xl text-blue-400 font-bold p-2 rounded-md">{truncateString(data[index].animeTitle ? data[index].animeTitle : 'Erorr Finding Name', 25)}</h2>
+                        <div className="w-full sm:w-auto flex space-x-2 m-4">
+                            <button className="p-2 text-[1rem] font-sans text-blue-300 font-semibold glassBg ">Watch</button>
+                            <button className="p-2 text-[1rem] font-sans text-blue-300 font-semibold glassBg">Explore</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

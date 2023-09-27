@@ -84,7 +84,7 @@ function Nav() {
                             <MenubarItem>
                                 Genres
                             </MenubarItem>
-                            <MenubarItem>
+                            <MenubarItem onClick={()=>gotToMovie()}>
                                 Movies
                             </MenubarItem>
                             <MenubarItem>

@@ -17,9 +17,17 @@ function Card2({ obj, sub }: { obj: RecentAnimeType, sub: boolean }) {
             style={{
                 backgroundImage: `url(${obj.animeImg})`
             }}
-            className="w-[310px] sm:w-[340px] h-[200px] sm:h-[200px] rounded-md m-3  flex text-blue-100 bg-no-repeat bg-center">
-            <div className="w-full h-full glassBg3 rounded-md p-[10px] flex">
-                <img src={obj.animeImg} className="w-[40%] h-full rounded-md" />
+            className="w-[310px] sm:w-[340px] h-[200px] sm:h-[200px] rounded-md m-3  flex text-blue-100 bg-no-repeat bg-center bg-cover">
+            <div style={{
+                background: 'linear-gradient(to left, rgba(0, 0, 0, 1) , transparent )'
+            }} className="w-full h-full glassBg rounded-md p-[10px] flex">
+                <div
+                style={{
+                    background: 'linear-gradient(to right, rgba(0, 0, 0, .5) , transparent )'
+                }}
+                 className="h-full w-[40%] p-2 rounded-md">
+                    <img src={obj.animeImg} className="w-full h-full rounded-md" />
+                </div>
                 <div className="flex-1 h-full text-zinc-50 pl-3">
                     <h4 className="text-lg font-semibold font-sans ">
                         {truncateString(obj.animeTitle, 20)}

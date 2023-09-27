@@ -28,7 +28,7 @@ function AnimeIndex({ animeDat, topairres,animeId }: AnimeIndexProps) {
                 <div className='w-full mt-6'>
                     <div style={{
                         backgroundImage: `url(${getRandomCover()?.url})`
-                    }} className='w-full h-[240px] sm:h-[300px] bg-center rounded-md'>
+                    }} className='w-full h-[240px] sm:h-[300px] bg-center bg-cover bg-no-repeat rounded-md'>
                     </div>
                     <div className='w-full flex flex-col sm:flex-row items-center'>
                         <div className='sm:ml-5  mt-[-40px]'>
