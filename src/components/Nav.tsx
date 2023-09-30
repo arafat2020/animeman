@@ -26,6 +26,10 @@ function Nav() {
         startPorgress()
         router.push('/movie')
     }
+    function goToGenres() {
+        startPorgress()
+        router.push('/genres')
+    }
 
     return (
         <div className='w-screen sm:container flex pt-2 items-center'>
@@ -43,9 +47,9 @@ function Nav() {
             </div>
             <div className='sm:flex font-bold hidden'>
                 <Button onClick={() => gotToPopular()} disabled={loading} variant="custom1">Populer</Button>
-                <Button disabled={loading} variant="custom1">Genres</Button>
-                <Button  onClick={() => gotToMovie()} disabled={loading} variant="custom1">Movies</Button>
-                <Button disabled={loading} variant="custom1">Top Airing</Button>
+                <Button onClick={() => goToGenres()} disabled={loading} variant="custom1">Genres</Button>
+                <Button onClick={() => gotToMovie()} disabled={loading} variant="custom1">Movies</Button>
+                <Button disabled={loading} variant="custom1">My Activity</Button>
             </div>
             <div className='hidden sm:inline'>
                 <UserButton
@@ -81,14 +85,14 @@ function Nav() {
                             <MenubarItem onClick={() => gotToPopular()}>
                                 Populer
                             </MenubarItem>
-                            <MenubarItem>
+                            <MenubarItem onClick={() => goToGenres()}>
                                 Genres
                             </MenubarItem>
-                            <MenubarItem onClick={()=>gotToMovie()}>
+                            <MenubarItem onClick={() => gotToMovie()}>
                                 Movies
                             </MenubarItem>
                             <MenubarItem>
-                                Top Airin
+                                My Activity
                             </MenubarItem>
 
                         </MenubarContent>

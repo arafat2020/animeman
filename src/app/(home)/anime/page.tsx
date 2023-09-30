@@ -18,7 +18,7 @@ async function Anime({ searchParams }: { searchParams: { id: string } }) {
   
   return (
     <div className='w-full'>
-      <FinishLoad />
+      <FinishLoad trigger={searchParams.id}/>
       <AnimeIndex animeId={searchParams.id} animeDat={data} topairres={data_2}/>
     </div>
   )

@@ -20,7 +20,7 @@ function Card2({ obj, sub }: { obj: RecentAnimeType, sub: boolean }) {
             className="w-[310px] sm:w-[340px] h-[200px] sm:h-[200px] rounded-md m-3  flex text-blue-100 bg-no-repeat bg-center bg-cover">
             <div style={{
                 background: 'linear-gradient(to left, rgba(0, 0, 0, 1) , transparent )'
-            }} className="w-full h-full glassBg rounded-md p-[10px] flex">
+            }} className="w-full h-full glassBg4 rounded-md p-[10px] flex">
                 <div
                 style={{
                     background: 'linear-gradient(to right, rgba(0, 0, 0, .5) , transparent )'
