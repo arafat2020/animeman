@@ -13,7 +13,7 @@ const Page = async () => {
  }
  const dev = true
  if (dev) {
-  return redirect('/home')
+   redirect('/home')
  }
   return (
     <div className='w-full h-full bg-black relative'>
