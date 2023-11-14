@@ -2,7 +2,6 @@ import { createAnimeInstaance } from "@/lib/createAnimeInstance"
 import prisma from "@/lib/db"
 import { currentUser } from "@clerk/nextjs"
 import { ObjectId } from "bson"
-import { NextApiRequest } from "next"
 import { NextResponse } from "next/server"
 
 export async function GET(req: Request ) {

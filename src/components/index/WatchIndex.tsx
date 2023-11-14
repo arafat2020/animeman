@@ -15,7 +15,7 @@ function WatchIndex({ data_1, data_2, epID, animeId }: WatchProps) {
 
   return (
     <div className='w-full flex flex-col sm:flex-row justify-around'>
-      <Watch title={data2.title.toString()} refer={`${data.headers?.Referer}`} url={data.sources} poster={`${data2.image?.toString()}`} />
+      <Watch animeId={animeId} episodeId={epID} obj={data2} title={data2.title.toString()} refer={`${data.headers?.Referer}`} url={data.sources} poster={`${data2.image?.toString()}`} />
       <Episodes animeId={animeId} episodeID={epID} info={data2} />
     </div>
   )

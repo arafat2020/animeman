@@ -2,11 +2,12 @@ import FinishLoad from '@/components/FinishLoad'
 import RecentEpisode from '@/components/RecentEpisode'
 import Slider2 from '@/components/Slider2'
 import TopAnime from '@/components/TopAnime'
+import Anilist from '@consumet/extensions/dist/providers/meta/anilist'
 import axios from 'axios'
 import React from 'react'
 const getPoularAnime = async () => {
-  const data = await axios.get('https://gogo-anime-exbbfz3to-arafat2020.vercel.app/popular')
-  return data.data
+  const data = await new Anilist().fetchPopularAnime()
+  return data
 }
 const getRecentEpisod = async () => {
   const data = await axios.get('https://gogo-anime-exbbfz3to-arafat2020.vercel.app/recent-release')
@@ -14,6 +15,7 @@ const getRecentEpisod = async () => {
 }
 async function Home() {
   const [data_one, data_tow]: {}[] = await Promise.all([getPoularAnime(), getRecentEpisod()])
+// console.log(data_one);
 
 
   return (

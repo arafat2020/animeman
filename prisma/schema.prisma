@@ -53,12 +53,12 @@ model BookMark {
 }
 
 model PlayList {
-  id     String          @id @map("_id")
-  nmae   String
-  user   User            @relation(fields: [userId], references: [userId])
-  userId String
-  anime  AnimeInstance[]
-  episodeId String
+  id         String          @id @map("_id")
+  nmae       String
+  user       User            @relation(fields: [userId], references: [userId])
+  userId     String
+  anime      AnimeInstance[]
+  episodeId  String
   episodeNum Int
 }
 
